@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SpectrumLens"
+description = "An explainable RF spectrum analysis copilot for exploring IQ captures. Built-in demo signals, IQ upload, spectrum and spectrogram analysis, signal estimates, and evidence-backed anomaly alerts."
+version = "1.0.0"
+id = "artifacts/spectrum-lens"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19325
+
+[services.development]
+run = "pnpm --filter @workspace/spectrum-lens run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/spectrum-lens", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/spectrum-lens/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19325"
+BASE_PATH = "/"
