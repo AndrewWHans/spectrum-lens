@@ -177,4 +177,4 @@ These are future directions, not implemented features.
 
 [GitHub](https://github.com/AndrewWHans) · [LinkedIn](https://www.linkedin.com/in/thehanson)
 
-Developed for **SprintHack@ND 2026**, University of Notre Dame.
+Developed at **SprintHack@ND 2026**, University of Notre Dame.
